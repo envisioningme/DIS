@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DIS-FILE PAKT-0004</title>
+<style>
+  :root{
+    --bg:#0d0d0d;
+    --panel:#161616;
+    --red:#c31313;
+    --red-dim:#7a0d0d;
+    --ink:#e4e4e4;
+    --ink-dim:#9a9a9a;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:48px 16px 100px;
+    background-color:var(--bg);
+    background-image:
+      linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+      linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+      linear-gradient(30deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+      linear-gradient(150deg, #161616 12%, transparent 12.5%, transparent 87%, #161616 87.5%, #161616),
+      linear-gradient(60deg, #1a1a1a 25%, transparent 25.5%, transparent 75%, #1a1a1a 75%, #1a1a1a),
+      linear-gradient(60deg, #1a1a1a 25%, transparent 25.5%, transparent 75%, #1a1a1a 75%, #1a1a1a);
+    background-size: 56px 98px;
+    background-position: 0 0, 0 0, 28px 49px, 28px 49px, 0 0, 28px 49px;
+    color:var(--ink);
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    line-height:1.65;
+  }
+
+  .rating{
+    width:fit-content;
+    margin:0 auto 28px;
+    border:1px solid var(--red);
+    padding:6px 16px;
+    font-size:.85em;
+    letter-spacing:.05em;
+    color:var(--red);
+    background:rgba(195,19,19,.06);
+  }
+  .rating b{color:#ff3b3b; margin:0 8px;}
+  .rating .btn{color:var(--ink-dim); margin-left:6px;}
+
+  .frame{
+    max-width:780px;
+    margin:0 auto;
+    border:1px solid var(--red);
+    padding:6px;
+  }
+  .frame-inner{
+    border:1px solid var(--red);
+    padding:32px 40px 44px;
+    background:var(--panel);
+  }
+
+  .foreword-box{
+    position:relative;
+    border:1px solid var(--red);
+    padding:22px 20px;
+    margin-bottom:26px;
+    text-align:center;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse at center, rgba(150,10,10,.35) 0%, rgba(20,5,5,0) 70%),
+      linear-gradient(180deg, #1c0808 0%, #120404 100%);
+  }
+  .foreword-box .label{
+    display:inline-block;
+    border:1px solid var(--red);
+    padding:6px 18px;
+    color:#ff4d4d;
+    font-weight:bold;
+    letter-spacing:.05em;
+    background:rgba(0,0,0,.4);
+    position:relative;
+    z-index:1;
+  }
+  hr.divider{
+    border:none;
+    border-top:1px solid var(--red-dim);
+    margin:0 0 24px;
+  }
+
+  h1.title{
+    text-align:center;
+    font-size:1.05em;
+    letter-spacing:.1em;
+    margin:0 0 4px;
+    color:var(--ink);
+  }
+  .subtitle{
+    text-align:center;
+    color:var(--ink-dim);
+    font-size:.8em;
+    letter-spacing:.08em;
+    margin-bottom:30px;
+  }
+
+  .section-label{
+    font-weight:bold;
+    letter-spacing:.06em;
+    color:#ff4d4d;
+    font-size:.85em;
+    margin:30px 0 12px;
+  }
+  p{margin:0 0 14px; font-family:Georgia,"Times New Roman",serif; font-size:1em;}
+  .sig{text-align:right; font-style:italic; color:var(--ink-dim); font-family:Georgia,serif;}
+
+  table.status{
+    width:100%;
+    border-collapse:collapse;
+    font-size:.85em;
+    margin-bottom:10px;
+  }
+  table.status td{border:1px solid var(--red-dim); padding:8px 12px;}
+  table.status td.field{color:var(--ink-dim); width:45%;}
+
+  .cell{
+    border-left:3px solid var(--red);
+    padding:8px 0 8px 16px;
+    margin:0 0 22px;
+    background:rgba(195,19,19,.04);
+  }
+  .cell .k{color:var(--ink-dim); font-size:.78em; letter-spacing:.04em; margin-top:8px;}
+  .cell .k:first-child{margin-top:0;}
+  .cell div.v{font-family:Georgia,serif;}
+
+  .log{
+    border:1px solid var(--red-dim);
+    padding:20px 24px;
+    margin:14px 0;
+    background:rgba(0,0,0,.25);
+  }
+  .log .marker{
+    text-align:center;
+    letter-spacing:.15em;
+    color:#ff4d4d;
+    font-size:.78em;
+    margin:8px 0;
+  }
+  .log p{margin:0 0 12px; font-family:Georgia,serif;}
+  .log .speaker{color:#ff4d4d; font-weight:bold; font-family:"Trebuchet MS",Arial,sans-serif;}
+  .log .action{color:var(--ink-dim); font-style:italic;}
+
+  .note{
+    border-left:3px solid var(--red-dim);
+    padding:16px 20px;
+    font-style:italic;
+    color:#cfcfcf;
+    font-family:Georgia,serif;
+  }
+
+  .alert{
+    border:1px solid var(--red);
+    padding:22px 26px;
+    background:
+      radial-gradient(ellipse at top, rgba(150,10,10,.25) 0%, rgba(0,0,0,0) 70%),
+      rgba(0,0,0,.3);
+  }
+  .alert .warn{
+    text-align:center;
+    color:#ff4d4d;
+    letter-spacing:.12em;
+    font-weight:bold;
+    margin-bottom:16px;
+  }
+  .alert p{font-weight:bold; font-family:Georgia,serif;}
+
+  .marginal{
+    font-size:.78em;
+    color:var(--ink-dim);
+    border-left:2px solid var(--red-dim);
+    padding-left:12px;
+    margin:16px 0 0;
+    font-style:italic;
+  }
+
+  .footer{
+    text-align:center;
+    margin-top:12px;
+    font-size:.7em;
+    color:#555;
+    letter-spacing:.12em;
+  }
+</style>
+</head>
+<body>
+
+  <div class="rating">RATING: <b>+235</b> <span class="btn">+</span> <span class="btn">−</span> <span class="btn">✕</span></div>
+
+  <div class="frame">
+    <div class="frame-inner">
+
+      <div class="foreword-box">
+        <span class="label">FOREWORD:</span>
+      </div>
+      <hr class="divider">
+
+      <p>The Pakt calls itself a union of the people. Four flags stitched into one banner, four governments that supposedly answer to nothing but the will of their citizens. It is a convenient story, and like most convenient stories, it is not entirely a lie.</p>
+      <p>Kimnish, Urbian, and Holish did not choose Kushia as their lead member out of admiration. They chose it because Kushia pays for the privilege, and because none of the three have the spine to refuse a seat at a table that keeps them fed. We do not believe the Pakt itself is a hostile actor in the conventional sense.</p>
+      <p>What concerns this Service is not the Pakt's public charter. It is what moves beneath it.</p>
+      <p>Every thread we have pulled on the Black Sentinel, every cell, every cache, every uniform stitched from cloth that should not exist outside a CASF quartermaster's stores eventually runs cold at a Kushian border crossing. We cannot yet prove state sponsorship. We can prove that Kushia has never once helped us disprove it.</p>
+      <p>This file exists to track that gap between what the Pakt says it is and what we suspect it does.</p>
+      <div class="sig">— Deputy Director, DIS</div>
+
+      <hr class="divider" style="margin-top:26px;">
+
+      <h1 class="title">DIS-FILE PAKT-0004</h1>
+      <div class="subtitle">SUBJECT: THE "PAKT OF THE PEOPLE" &nbsp;·&nbsp; TOP SECRET // DIRECTIVE 0/II</div>
+
+      <div class="section-label">FILE STATUS</div>
+      <table class="status">
+        <tr><td class="field">Threat Classification</td><td>Indeterminate — Political/Paramilitary</td></tr>
+        <tr><td class="field">Monitoring Status</td><td>Active</td></tr>
+        <tr><td class="field">Disruption Authorization</td><td>None issued</td></tr>
+        <tr><td class="field">Black Sentinel Linkage</td><td>Suspected, unconfirmed</td></tr>
+        <tr><td class="field">Last Reviewed</td><td>2036</td></tr>
+      </table>
+
+      <div class="section-label">DESCRIPTION</div>
+      <p>The Pakt of the People is a political and economic alliance comprising the Kimnish Republic, Urbian, and the Holish territories, under the lead membership and primary funding of Kushia. Publicly, the Pakt presents itself as a mutual defense and trade compact formed to counter balance Cascadian and Solstrican regional influence. Its charter guarantees each member state sovereignty over internal affairs. Kushia retains disproportionate control over the Pakt's joint military procurement and intelligence sharing apparatus.</p>
+      <p>DIS assesses that Kushia's dominant position within the Pakt is not incidental. Kimnish and Urbian lack the industrial base to sustain independent defense procurement; Holish lacks both industry and a standing military of consequence. All three depend on Kushian subsidy to remain usable. This dependency is believed to extend into deniable channels. To reiterate, the movement of material, personnel, and funds toward groups operating outside any member state's declared chain of command.</p>
+      <p>The Black Sentinel is the primary group of concern. Originating as a volunteer relief network during the Auroran civil wars of the 1890s, its modern incarnation bears no resemblance to that origin beyond the name. DIS has recovered uniform components from Black Sentinel cells on three separate occasions, none of which trace to any confirmed CASF supply chain, active or decommissioned. Financial modeling of recovered Black Sentinel assets consistently points toward Kushian origin, though laundered through enough intermediary shells that no single transaction has yet been made prosecutable or even citable.</p>
+
+      <div class="section-label">OPERATIONAL COMPILATION</div>
+      <p>Standing DIS protocol for Pakt-linked activity proceeds as follows —</p>
+      <p><strong>PAKT-01:</strong> Any intercepted communication, financial transfer, or material shipment bearing indicators consistent with Black Sentinel activity is flagged and cross referenced against known Pakt state entities, prioritizing Arcadian shell registries.</p>
+      <p><strong>PAKT-02:</strong> Confirmed Black Sentinel cells are surveilled, not neutralized, absent an immediate and demonstrable threat to CASF personnel or Cascadian civilians. Premature disruption has historically severed the financial trail before it reaches its source.</p>
+      <p><strong>PAKT-03:</strong> Assets embedded within Pakt member states report through cutouts only. Direct DIS presence within Arcadia is to be assumed compromised at all times; no operative is to carry material linking them to this file while within borders.</p>
+      <p><strong>PAKT-04:</strong> Any evidence directly implicating a sitting Arcadian official is escalated to the Director and withheld from the Cascadian Federal Intelligence Agency (CFIA) pending Ministerial review.</p>
+      <p><strong>PAKT-05:</strong> All recovered CASF-pattern equipment of unknown provenance is retained for forensic tracing and is never described in public-facing material as confirmed Black Sentinel property, to avoid tipping our evidentiary hand.</p>
+      <div class="marginal">Marginal note, handwritten: "Cleaned up 04 myself so the Director doesn’t chew you out. [REDACTED] will sign off on this, but stop drafting protocol on a 30-hour shift. Go home and sleep. — D.D."</div>
+
+      <div class="section-label">INTELLIGENCE ARCHIVE — RECOVERED CELLS</div>
+
+      <div class="cell">
+        <div class="k">CELL DESIGNATION</div><div class="v">BS-114-K</div>
+        <div class="k">LOCATION OF RECOVERY</div><div class="v">Border crossing, Solstrician frontier</div>
+        <div class="k">DESCRIPTION</div><div class="v">Eleven personnel, seven CASF-pattern uniform components (non-issue fabric), two crates of small arms bearing filed serial numbers. No documents recovered.</div>
+        <div class="k">ACTION TAKEN</div><div class="v">Cell surveilled six weeks prior to voluntary dispersal. Financial trail lost at a holding company, three shells deep.</div>
+      </div>
+
+      <div class="cell">
+        <div class="k">CELL DESIGNATION</div><div class="v">BS-089-U</div>
+        <div class="k">LOCATION OF RECOVERY</div><div class="v">Urbian coastal township</div>
+        <div class="k">DESCRIPTION</div><div class="v">Logistics cache only, no personnel present at time of discovery. Contents consistent with a mid-sized cell's resupply including rations, medical stock, radio equipment of Kushian manufacture.</div>
+        <div class="k">ACTION TAKEN</div><div class="v">Cache surveilled, not seized, per PAKT-02. Monitoring ongoing.</div>
+      </div>
+
+      <div class="cell">
+        <div class="k">CELL DESIGNATION</div><div class="v">BS-201-H</div>
+        <div class="k">LOCATION OF RECOVERY</div><div class="v">Holish territorial waters, fishing vessel</div>
+        <div class="k">DESCRIPTION</div><div class="v">Vessel flagged as Holish civilian, registered to a shell corporation with no other assets. Recovered manifest listed cargo inconsistent with hold contents (declared: textiles; actual: small arms, partial).</div>
+        <div class="k">ACTION TAKEN</div><div class="v">Vessel released under CFIA cover story to preserve DIS asset embedded in Holish port authority. Shell corporation added to standing watch list.</div>
+      </div>
+
+      <div class="section-label">INTERROGATION LOG PAKT-0004.1</div>
+      <p style="color:var(--ink-dim); font-size:.9em;">OPENING STATEMENT: The following is an excerpted transcript of an interview conducted with a detained Black Sentinel courier, apprehended alongside Cell BS-114-K, by DIS Field Officer E. Ripley.</p>
+
+      <div class="log">
+        <div class="marker">« BEGIN LOG »</div>
+        <p><span class="speaker">RIPLEY:</span> You know where the guns came from.</p>
+        <p><span class="speaker">SUBJECT:</span> I know where I picked them up. Not the same thing.</p>
+        <p><span class="speaker">RIPLEY:</span> Fair enough. Where'd you pick them up?</p>
+        <p><span class="speaker">SUBJECT:</span> A warehouse. Didn't have a flag on it.</p>
+        <p><span class="speaker">RIPLEY:</span> Warehouses have owners.</p>
+        <p><span class="speaker">SUBJECT:</span> So do you, I'd wager. Doesn't mean you know who signs your director's paycheck.</p>
+        <p><span class="speaker">RIPLEY:</span> I know exactly who signs it.</p>
+        <p><span class="speaker">SUBJECT:</span> Lucky you.</p>
+        <p class="action">RIPLEY sets a photograph of the recovered crates on the table.</p>
+        <p><span class="speaker">RIPLEY:</span> The filing on these serials was sloppy. Rushed. Somebody wanted them moved before somebody else asked questions. That's not how a patient organization operates. That's how a nervous one does.</p>
+        <p><span class="speaker">SUBJECT:</span> Maybe we're nervous.</p>
+        <p><span class="speaker">RIPLEY:</span> About what?</p>
+        <p><span class="speaker">SUBJECT:</span> About people like you asking questions that get closer to an answer you're not ready to have.</p>
+        <p><span class="speaker">RIPLEY:</span> Try me.</p>
+        <p><span class="speaker">SUBJECT:</span> No offense, Officer, but if I tell you and you're not ready for it, you don't do anything useful with it. You just get yourself reassigned, and somebody dumber gets my chair next month.</p>
+        <p><span class="speaker">RIPLEY:</span> And if I am ready for it?</p>
+        <p><span class="speaker">SUBJECT:</span> Then you already know. You're just hoping I'll say it first so it isn't your name on the file.</p>
+        <div class="marker">« END LOG »</div>
+      </div>
+
+      <p style="color:var(--ink-dim); font-size:.9em;">CLOSING STATEMENT: Subject provided no further actionable intelligence and was transferred to standard CASF custody following interview. Ripley's report flagged the subject's final statement for Deputy Director review; no further action taken as of file date.</p>
+
+      <div class="section-label">ATTACHED NOTE</div>
+      <div class="note">
+        <p>We keep waiting for the document that proves it. A signed order, a wire transfer with a Ministry seal on it, anything. It isn't coming. Kushia didn't get this good at deniability by being careless — they got good at it by being patient, and by never needing more than three shell companies to make a trail go cold.</p>
+        <p>I don't think the other three Pakt states know how deep it runs, or if they do, they've decided it isn't their problem as long as the subsidies keep arriving. That's the part that should worry us more than the guns. A conspiracy is dangerous. A conspiracy nobody wants to look at is worse.</p>
+        <div class="sig">— Deputy Director, DIS</div>
+      </div>
+
+      <div class="section-label">ALERT PAKT-0004.1 — STATUS ESCALATION</div>
+      <div class="alert">
+        <div class="warn">« WARNING »</div>
+        <p>FOLLOWING THE OAKHAVEN RESORT INCIDENT AND THE SUBSEQUENT DETENTION AND RELEASE OF VICTOR CHEN, THIS SERVICE HAS ELEVATED PAKT-LINKED FINANCIAL ACTIVITY TO ACTIVE PRIORITY. PRELIMINARY ANALYSIS OF MATERIAL RECOVERED FROM CHEN'S SECONDARY DEVICE SHOWS CONTACT OVERLAP WITH NO FEWER THAN TWO ENTITIES ON THE PAKT-0004 SHELL WATCH LIST.</p>
+        <p>WHETHER CHEN IS SUPPLYING THE PAKT, BEING SUPPLIED BY IT, OR SIMPLY SELLING TO WHOEVER PAYS FASTEST REMAINS UNDETERMINED. THIS SERVICE CONSIDERS ALL THREE POSSIBILITIES EQUALLY DANGEROUS.</p>
+        <p>FURTHER ACTION PENDING DIRECTOR AUTHORIZATION.</p>
+      </div>
+
+      <div class="footer">END OF FILE — DIS-FILE PAKT-0004</div>
+
+    </div>
+  </div>
+
+</body>
+</html>
